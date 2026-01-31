@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 Countries Dashboard
 
-## Getting Started
+A modern, responsive Countries Dashboard built with Next.js (App Router), TypeScript, and Tailwind CSS.
+The application consumes real-world data from the REST Countries API and presents it in a clean, accessible, and user-friendly interface.
 
-First, run the development server:
+This project was built as an interview-ready showcase of modern front-end development practices.
 
-```bash
+✨ Features
+
+🌐 Server-side data fetching using Next.js App Router
+
+🔍 Client-side search by country name
+
+🌍 Filter countries by region
+
+⭐ Sort by population and land area
+
+🌗 Light / Dark mode support
+
+♿ Accessible UI (semantic HTML, keyboard-friendly controls)
+
+📱 Fully responsive layout
+
+🧹 Clean and maintainable component structure
+
+🔒 Type-safe API handling with TypeScript
+
+🧠 Architecture & Design Decisions
+Server vs Client Components
+
+Server Components
+
+Fetch country data once on the server
+
+Improve performance and SEO
+
+Avoid unnecessary client-side API calls
+
+Client Components
+
+Handle interactive features (search, filter, sort, reset)
+
+Keep UI state local and predictable
+
+This separation keeps the application scalable, performant, and easy to reason about.
+
+Why no separate “Details Page”?
+
+Instead of navigating to a separate details page, key country information (capital, region, population, area) is displayed directly in the card layout.
+
+Benefits:
+
+Fewer clicks
+
+Faster data exploration
+
+Better dashboard-style UX
+
+Reduced routing complexity
+
+This mirrors real-world data dashboards.
+
+🛠 Tech Stack
+
+Next.js (App Router)
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+Axios
+
+REST Countries API
+
+♿ Accessibility
+
+Semantic HTML structure (header, main, section, footer)
+
+Keyboard-accessible inputs and controls
+
+Visible focus states
+
+Proper image alternative text
+
+Sufficient color contrast in light and dark modes
+
+Accessibility was considered as part of the core UI design, not an afterthought.
+
+🌗 Dark Mode
+
+Dark mode is implemented using Tailwind’s class strategy and toggled at the document level.
+All major UI elements explicitly define dark mode styles to ensure readability and contrast.
+
+📁 Project Structure
+src/
+├─ app/
+│  ├─ layout.tsx
+│  ├─ page.tsx
+│  └─ globals.css
+├─ components/
+│  ├─ Navbar.tsx
+│  ├─ Footer.tsx
+│  ├─ HomeClient.tsx
+│  └─ CountryList.tsx
+├─ lib/
+│  └─ api.ts
+└─ types/
+   └─ country.ts
+
+🚀 Getting Started
+1️⃣ Install dependencies
+npm install
+
+2️⃣ Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3️⃣ Open in browser
+<http://localhost:3000>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📌 API Reference
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Data is fetched from:
 
-## Learn More
+<https://restcountries.com/v3.1>
 
-To learn more about Next.js, take a look at the following resources:
+Only required fields are requested to minimize payload size and improve performance.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🎯 What This Project Demonstrates
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Practical use of Next.js App Router
 
-## Deploy on Vercel
+Real-world API integration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Thoughtful UX decisions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+State management without overengineering
+
+Clean separation of concerns
+
+Accessibility and dark mode awareness
+
+📄 License
+
+This project is open-source and available for learning and demonstration purposes.
