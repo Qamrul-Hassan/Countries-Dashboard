@@ -28,7 +28,7 @@ export default function CountryList({
   );
 
   const filteredCountries = useMemo(() => {
-    let result = countries.filter((c) => {
+    const result = countries.filter((c) => {
       const matchSearch = c.name.common
         .toLowerCase()
         .includes(search.toLowerCase());
