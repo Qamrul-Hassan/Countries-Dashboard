@@ -103,16 +103,18 @@ export default function CountryList({
       {/* Cards */}
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {filteredCountries.map((c) => (
-         <li
-  key={c.cca3}
-  className="
-    border rounded-lg overflow-hidden
-    bg-white text-zinc-900
-    dark:bg-zinc-900 dark:text-zinc-100
-    shadow-sm
-  "
->
-
+          <li
+            key={c.cca3}
+            className="
+              relative
+              border rounded-lg overflow-hidden
+              bg-white dark:bg-zinc-900
+              text-zinc-900 dark:text-zinc-100
+              shadow-sm
+              transition-shadow duration-200 ease-out
+              hover:shadow-lg
+            "
+          >
             <Image
               src={c.flags.png}
               alt={c.flags.alt || c.name.common}
@@ -126,12 +128,15 @@ export default function CountryList({
               <h2 className="font-semibold text-base">
                 {c.name.common}
               </h2>
+
               <p className="text-muted-foreground">
                 {c.subregion || c.region}
               </p>
+
               <p>Capital: {c.capital?.[0] ?? "N/A"}</p>
               <p>
-                Population: {c.population.toLocaleString()}
+                Population:{" "}
+                {c.population.toLocaleString()}
               </p>
               <p>
                 Area:{" "}
