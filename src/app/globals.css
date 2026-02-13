@@ -251,6 +251,19 @@
     @apply mt-1 text-base font-black;
     color: var(--text-strong);
   }
+
+  .go-top-button {
+    animation: go-top-float 2.2s ease-in-out infinite;
+  }
+
+  .go-top-button:hover {
+    transform: translateY(-3px) scale(1.06);
+    box-shadow: 0 20px 34px #66241670 !important;
+  }
+
+  .go-top-button:active {
+    transform: translateY(0) scale(0.98);
+  }
 }
 
 @keyframes rise-in {
@@ -262,6 +275,17 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes go-top-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
   }
 }
 

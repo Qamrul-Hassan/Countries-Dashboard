@@ -2,6 +2,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export const metadata: Metadata = {
   title: "Countries Dashboard",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Navbar />
         <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 sm:py-10">{children}</main>
         <Footer />
+        <ScrollToTopButton />
       </body>
     </html>
   );

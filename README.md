@@ -35,7 +35,7 @@ It uses the REST Countries API and presents country data with a bold, accessible
 - Semantic HTML and keyboard-friendly controls
 - Type-safe API integration with TypeScript
 
-## Country Details Page
+## Country Details Information
 
 Each `View details` page includes extended information such as:
 
