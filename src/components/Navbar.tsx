@@ -31,7 +31,7 @@ export default function Navbar() {
             <span className="block truncate text-sm font-extrabold uppercase tracking-[0.08em] sm:text-base">
               Countries
             </span>
-            <span className="block truncate text-[10px] font-semibold uppercase tracking-[0.12em] text-[color:var(--muted-text)] sm:text-[11px]">
+            <span className="block truncate text-[10px] font-semibold uppercase tracking-[0.12em] text-[#662416] dark:text-[#e5792a] sm:text-[11px]">
               Dashboard
             </span>
           </span>

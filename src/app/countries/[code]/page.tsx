@@ -165,7 +165,7 @@ export default async function CountryDetailsPage({ params }: PageProps) {
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-[color:var(--muted-text)]">
               {country.subregion || country.region}
             </p>
-            <h1 className="text-3xl font-black tracking-tight text-[color:var(--text-strong)] sm:text-4xl">
+            <h1 className="text-3xl font-black tracking-tight text-[#662416] dark:text-[#e5792a] sm:text-4xl">
               {country.name.common}
             </h1>
             <p className="text-sm text-[color:var(--muted-text)]">{country.name.official}</p>

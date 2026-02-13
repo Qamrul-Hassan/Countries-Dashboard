@@ -159,7 +159,7 @@ export default function CountryList({
               <div className="flex flex-1 flex-col justify-between gap-4 p-5">
                 <div className="space-y-3">
                   <header className="space-y-1.5">
-                    <h3 className="text-xl font-black tracking-tight text-[color:var(--text-strong)]">
+                    <h3 className="text-xl font-black tracking-tight text-[#662416] dark:text-[#e5792a]">
                       {country.name.common}
                     </h3>
                     <p className="text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--muted-text)]">
