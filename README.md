@@ -1,101 +1,90 @@
-# 🌍 Countries Dashboard
+﻿# Countries Dashboard
 
-A modern, responsive Countries Dashboard built with Next.js (App Router), TypeScript, and Tailwind CSS.
-The application consumes real-world data from the REST Countries API and presents it in a clean, accessible, and user-friendly interface.
+A modern, responsive countries dashboard built with Next.js (App Router), TypeScript, and Tailwind CSS.
+It uses the REST Countries API and presents country data with a bold, accessible, and mobile-first UI.
 
-This project was built as an interview-ready showcase of modern front-end development practices.
+## Live Demo
 
-✨ Features
+- Production: `https://your-live-demo-url.vercel.app`
+- Preview/Alt: `https://your-second-demo-link.com`
 
-🌐 Server-side data fetching using Next.js App Router
+## Screenshots / GIF Preview
 
-🔍 Client-side search by country name
+> Replace these placeholder paths with your actual assets.
 
-🌍 Filter countries by region
+### Home Page
 
-⭐ Sort by population and land area
+![Home Page](./docs/screenshots/home.png)
 
-🌗 Light / Dark mode support
+### Country Details Page
 
-♿ Accessible UI (semantic HTML, keyboard-friendly controls)
+![Country Details](./docs/screenshots/details.png)
 
-📱 Fully responsive layout
+### Search / Filter Demo (GIF)
 
-🧹 Clean and maintainable component structure
+![Search and Filter Demo](./docs/previews/search-filter.gif)
 
-🔒 Type-safe API handling with TypeScript
+## Features
 
-🧠 Architecture & Design Decisions
-Server vs Client Components
+- Server-side country data fetching with Next.js App Router
+- Client-side search, region filter, and sorting (population/area)
+- Dedicated country details page with rich data
+- Embedded map and external map links (Google Maps/OpenStreetMap)
+- Light/Dark mode toggle
+- Responsive card grid and detail layouts
+- Semantic HTML and keyboard-friendly controls
+- Type-safe API integration with TypeScript
 
-Server Components
+## Country Details Page
 
-Fetch country data once on the server
+Each `View details` page includes extended information such as:
 
-Improve performance and SEO
+- Official and native names
+- Capital, population, area, and population density
+- Region/subregion, continents, coordinates, borders
+- Currency, calling code, top-level domain, FIFA code
+- Languages, demonyms, timezones, start of week, driving side
+- Flag, coat of arms, postal code format, and Gini index (when available)
 
-Avoid unnecessary client-side API calls
+## Architecture
 
-Client Components
+### Server Components
 
-Handle interactive features (search, filter, sort, reset)
+- Fetch API data on the server
+- Reduce unnecessary client-side requests
+- Improve performance and SEO
 
-Keep UI state local and predictable
+### Client Components
 
-This separation keeps the application scalable, performant, and easy to reason about.
+- Handle interactive UI state (search/filter/sort/reset)
+- Keep state local and predictable
 
-Why no separate “Details Page”?
+This separation keeps the app scalable, performant, and maintainable.
 
-Instead of navigating to a separate details page, key country information (capital, region, population, area) is displayed directly in the card layout.
+## Tech Stack
 
-Benefits:
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS (v4)
+- Axios
+- REST Countries API
 
-Fewer clicks
+## Accessibility
 
-Faster data exploration
+- Semantic landmarks (`header`, `main`, `section`, `footer`)
+- Keyboard-accessible form controls and buttons
+- Visible focus states
+- Meaningful alt text for images
+- Reduced-motion support for animations
+- Contrast-aware light and dark themes
 
-Better dashboard-style UX
+## Project Structure
 
-Reduced routing complexity
-
-This mirrors real-world data dashboards.
-
-🛠 Tech Stack
-
-Next.js (App Router)
-
-React
-
-TypeScript
-
-Tailwind CSS
-
-Axios
-
-REST Countries API
-
-♿ Accessibility
-
-Semantic HTML structure (header, main, section, footer)
-
-Keyboard-accessible inputs and controls
-
-Visible focus states
-
-Proper image alternative text
-
-Sufficient color contrast in light and dark modes
-
-Accessibility was considered as part of the core UI design, not an afterthought.
-
-🌗 Dark Mode
-
-Dark mode is implemented using Tailwind’s class strategy and toggled at the document level.
-All major UI elements explicitly define dark mode styles to ensure readability and contrast.
-
-📁 Project Structure
+```text
 src/
 ├─ app/
+│  ├─ countries/[code]/page.tsx
 │  ├─ layout.tsx
 │  ├─ page.tsx
 │  └─ globals.css
@@ -108,39 +97,38 @@ src/
 │  └─ api.ts
 └─ types/
    └─ country.ts
+```
 
-🚀 Getting Started
-1️⃣ Install dependencies
+## Getting Started
+
+1. Install dependencies
+
+```bash
 npm install
+```
 
-2️⃣ Run the development server
+1. Start development server
+
+```bash
 npm run dev
+```
 
-3️⃣ Open in browser
-<http://localhost:3000>
+1. Open in browser
 
-📌 API Reference
+- <http://localhost:3000>
 
-Data is fetched from:
+## Build
 
-<https://restcountries.com/v3.1>
+```bash
+npm run build
+npm run start
+```
 
-Only required fields are requested to minimize payload size and improve performance.
+## API Reference
 
-🎯 What This Project Demonstrates
+- Base URL: <https://restcountries.com/v3.1>
+- The app requests only required fields for better performance.
 
-Practical use of Next.js App Router
+## License
 
-Real-world API integration
-
-Thoughtful UX decisions
-
-State management without overengineering
-
-Clean separation of concerns
-
-Accessibility and dark mode awareness
-
-📄 License
-
-This project is open-source and available for learning and demonstration purposes.
+This project is open-source and intended for learning, portfolio, and demonstration purposes.
