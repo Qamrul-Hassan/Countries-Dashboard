@@ -1,6 +1,9 @@
 export default function Loading() {
   return (
-    <section>
+    <section aria-labelledby="countries-loading-heading">
+      <h2 id="countries-loading-heading" className="sr-only">
+        Loading countries
+      </h2>
       <div className="h-8 w-48 bg-muted rounded mb-6" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

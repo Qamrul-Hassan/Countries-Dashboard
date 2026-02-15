@@ -42,7 +42,7 @@ export default function ScrollToTopButton() {
           : "pointer-events-none translate-y-3 opacity-0"
       }`}
       style={{
-        borderColor: "color-mix(in oklab, var(--color-7) 75%, #fff 25%)",
+        borderColor: "#ce6728",
         background: "linear-gradient(150deg, #ee8b37 0%, #ce6728 48%, #8f3e24 100%)",
         boxShadow: "0 16px 28px #66241659",
       }}
