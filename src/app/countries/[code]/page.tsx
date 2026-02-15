@@ -234,7 +234,7 @@ export default async function CountryDetailsPage({ params }: PageProps) {
             <h2 id="core-facts" className="text-sm font-black uppercase tracking-[0.1em] text-[color:var(--text-strong)]">
               Core facts
             </h2>
-            <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3 [&>div]:rounded-xl [&>div]:border [&>div]:border-[color:var(--border)]/85 [&>div]:bg-[color:var(--background)]/60 [&>div]:p-3 [&>div]:shadow-[0_10px_18px_#27252a14] [&>div]:transition-all [&>div]:duration-200 [&>div:hover]:-translate-y-0.5 [&>div:hover]:shadow-[0_14px_24px_#27252a26]">
               <div>
                 <dt className="info-key">Capital</dt>
                 <dd className="info-value">{country.capital?.[0] ?? "N/A"}</dd>
@@ -280,7 +280,7 @@ export default async function CountryDetailsPage({ params }: PageProps) {
             <h2 id="culture-society" className="text-sm font-black uppercase tracking-[0.1em] text-[color:var(--text-strong)]">
               Culture and society
             </h2>
-            <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
+            <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 [&>div]:rounded-xl [&>div]:border [&>div]:border-[color:var(--border)]/85 [&>div]:bg-[color:var(--background)]/60 [&>div]:p-3 [&>div]:shadow-[0_10px_18px_#27252a14] [&>div]:transition-all [&>div]:duration-200 [&>div:hover]:-translate-y-0.5 [&>div:hover]:shadow-[0_14px_24px_#27252a26]">
               <div>
                 <dt className="info-key">Languages</dt>
                 <dd className="info-value">{formatLanguages(country.languages)}</dd>
@@ -324,7 +324,7 @@ export default async function CountryDetailsPage({ params }: PageProps) {
             <h2 id="geo-map" className="text-sm font-black uppercase tracking-[0.1em] text-[color:var(--text-strong)]">
               Geography and map
             </h2>
-            <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3 [&>div]:rounded-xl [&>div]:border [&>div]:border-[color:var(--border)]/85 [&>div]:bg-[color:var(--background)]/60 [&>div]:p-3 [&>div]:shadow-[0_10px_18px_#27252a14] [&>div]:transition-all [&>div]:duration-200 [&>div:hover]:-translate-y-0.5 [&>div:hover]:shadow-[0_14px_24px_#27252a26]">
               <div>
                 <dt className="info-key">Continents</dt>
                 <dd className="info-value">{formatList(country.continents)}</dd>
@@ -387,7 +387,7 @@ export default async function CountryDetailsPage({ params }: PageProps) {
             <h2 id="economy-identity" className="text-sm font-black uppercase tracking-[0.1em] text-[color:var(--text-strong)]">
               Economy and identity
             </h2>
-            <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2 lg:grid-cols-3 [&>div]:rounded-xl [&>div]:border [&>div]:border-[color:var(--border)]/85 [&>div]:bg-[color:var(--background)]/60 [&>div]:p-3 [&>div]:shadow-[0_10px_18px_#27252a14] [&>div]:transition-all [&>div]:duration-200 [&>div:hover]:-translate-y-0.5 [&>div:hover]:shadow-[0_14px_24px_#27252a26]">
               <div>
                 <dt className="info-key">Currencies</dt>
                 <dd className="info-value">{formatCurrencies(country.currencies)}</dd>
