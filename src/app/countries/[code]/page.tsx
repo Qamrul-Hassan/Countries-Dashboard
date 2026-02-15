@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { api } from "@/lib/api";
+import { getReligionDataByCountry } from "@/lib/religion-data";
 import type { Country } from "@/types/country";
 
 type PageProps = {
@@ -13,12 +14,19 @@ type PageProps = {
 async function getCountry(code: string): Promise<Country> {
   try {
     const res = await api.get<Country | Country[]>(
-      `/alpha/${code}?fields=name,flag,cca3,region,subregion,population,area,capital,flags,continents,timezones,borders,tld,fifa,independent,unMember,startOfWeek,landlocked,gini,altSpellings,idd,postalCode,latlng,capitalInfo,car,languages,currencies,maps,coatOfArms,demonyms`
+      `/alpha/${code}?fields=name,flag,cca3,region,subregion,population,area,capital,flags,continents,timezones,borders,tld,fifa,independent,unMember,startOfWeek,landlocked,gini,altSpellings,idd,postalCode,latlng,capitalInfo,car,languages,religion,religions,currencies,maps,coatOfArms,demonyms`
     );
     const country = Array.isArray(res.data) ? res.data[0] : res.data;
 
     if (!country?.name?.common || !country?.flags?.svg) {
       notFound();
+    }
+
+    if (!country.religions && !country.religion) {
+      country.religions = await getReligionDataByCountry(
+        country.cca3,
+        country.region
+      );
     }
 
     return country;
@@ -50,6 +58,57 @@ function formatList(values?: string[]) {
 function formatLanguages(languages?: Record<string, string>) {
   const values = languages ? Object.values(languages) : [];
   return values.length > 0 ? values.join(", ") : "N/A";
+}
+
+function formatReligions(
+  religions?: Record<string, number | string>,
+  religion?: string
+) {
+  if (religions && Object.keys(religions).length > 0) {
+    const sortedEntries = Object.entries(religions).sort((a, b) => {
+      const aNumber = typeof a[1] === "number" ? a[1] : Number(a[1]);
+      const bNumber = typeof b[1] === "number" ? b[1] : Number(b[1]);
+
+      const aValid = Number.isFinite(aNumber);
+      const bValid = Number.isFinite(bNumber);
+
+      if (aValid && bValid) {
+        return bNumber - aNumber;
+      }
+
+      if (aValid) {
+        return -1;
+      }
+
+      if (bValid) {
+        return 1;
+      }
+
+      return a[0].localeCompare(b[0]);
+    });
+
+    const values = sortedEntries.map(([name, rawValue]) => {
+      const numericValue =
+        typeof rawValue === "number" ? rawValue : Number(rawValue);
+      if (!Number.isFinite(numericValue)) {
+        return `${name} (${rawValue})`;
+      }
+
+      if (numericValue <= 1) {
+        return `${name} (${(numericValue * 100).toFixed(1)}%)`;
+      }
+
+      if (numericValue <= 100) {
+        return `${name} (${numericValue.toFixed(1)}%)`;
+      }
+
+      return `${name} (${numericValue.toLocaleString()})`;
+    });
+
+    return values.join(", ");
+  }
+
+  return religion || "N/A";
 }
 
 function formatCurrencies(
@@ -225,6 +284,12 @@ export default async function CountryDetailsPage({ params }: PageProps) {
               <div>
                 <dt className="info-key">Languages</dt>
                 <dd className="info-value">{formatLanguages(country.languages)}</dd>
+              </div>
+              <div>
+                <dt className="info-key">Religions</dt>
+                <dd className="info-value">
+                  {formatReligions(country.religions, country.religion)}
+                </dd>
               </div>
               <div>
                 <dt className="info-key">Native names</dt>

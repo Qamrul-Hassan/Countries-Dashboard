@@ -44,6 +44,8 @@ export interface Country {
     side?: string;
   };
   languages?: Record<string, string>;
+  religion?: string;
+  religions?: Record<string, number | string>;
   currencies?: Record<
     string,
     {
