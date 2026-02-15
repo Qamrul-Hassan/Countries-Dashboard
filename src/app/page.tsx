@@ -19,7 +19,7 @@ export default async function HomePage() {
           Countries
         </h1>
         <p className="max-w-2xl text-sm font-medium text-[color:var(--muted-text)] sm:text-base">
-          Explore essential country facts with fast filters, responsive cards, and accessible interactions.
+          Browse population, geography, capitals, and key facts for every country in one place.
         </p>
       </header>
 
